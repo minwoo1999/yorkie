@@ -106,7 +106,7 @@ func (i *ClientInfo) CheckIfInProject(projectID types.ID) error {
 // Deactivate sets the status of this client to be deactivated and detaches all attached documents.
 func (i *ClientInfo) Deactivate() {
 	i.Status = ClientDeactivated
-	
+
 	// Detach all attached documents
 	if i.Documents != nil {
 		for _, docInfo := range i.Documents {
@@ -117,7 +117,7 @@ func (i *ClientInfo) Deactivate() {
 			}
 		}
 	}
-	
+
 	i.UpdatedAt = gotime.Now()
 }
 
